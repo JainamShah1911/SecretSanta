@@ -25,9 +25,9 @@ Once this is done Open the .sln file and hit run in visual studio.
 
 ## Using the Application
 
-**Step 1 : Add the participants filling up First Name, Last Name and Email(so we don't mess up with same names !) the simple form on Add Participant Page
-**Step 2 : While filling up the form make sure to select the Group, If you find one in the list select it or you can just write and a new Group will be created, Make sure to select Individual if you don't belong to any specific group.
-**Step 3 : Finally Click on Reveal Secret Santa in the revel secret santa page and you will have a list with who is going to gift whom.
+* **Step 1 : Add the participants filling up First Name, Last Name and Email(so we don't mess up with same names !) the simple form on Add Participant Page
+* **Step 2 : While filling up the form make sure to select the Group, If you find one in the list select it or you can just write and a new Group will be created, Make sure to select Individual if you don't belong to any specific group.
+* **Step 3 : Finally Click on Reveal Secret Santa in the revel secret santa page and you will have a list with who is going to gift whom.
       </ul>
 
 ## Author
