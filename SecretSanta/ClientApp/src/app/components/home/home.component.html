@@ -1,0 +1,73 @@
+<div fxLayout="row"  fxLayout.xs="column"  style="padding:15px;">
+  <div style="padding:15px" fxFlex="30">
+      <div layout-align="center center" class="login-card">
+        <mat-card style="padding:12px!important">
+          <form #new_user_form="ngForm" (ngSubmit)="addPerson(new_user_form)" name="addperson" novalidate class="full_form form-container">
+
+            <mat-form-field class="full_width">
+              <input matInput placeholder="First Name" required type="text" name="FirstName" [(ngModel)]="add.firstname" />
+              <mat-error>Please enter your first name</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full_width">
+              <input matInput placeholder="Last Name" required type="text" name="Last Name" [(ngModel)]="add.lastname" />
+              <mat-error>Please enter your last name</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full_width">
+              <input matInput placeholder="Email" required type="email" name="Email" [(ngModel)]="add.email" />
+              <mat-error>Please enter correct email address</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+              <input type="text" placeholder="Select a Group/ Select Individual" aria-label="Number" [(ngModel)]="add.group" matInput [formControl]="myControl" [matAutocomplete]="auto" name="group">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+
+            <div class="form_bottom">
+              <button type="submit" mat-raised-button color="primary">Join Secret Santa!</button>
+            </div>
+
+
+          </form>
+        </mat-card>
+      </div>
+    </div>
+    <div fxFlex="70" style="padding:15px">
+      <mat-table *ngIf="existdata" #table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="First Name">
+          <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.firstname}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Last Name">
+          <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.lastname}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Email">
+          <mat-header-cell class="mobile-hidden-item" *matHeaderCellDef> Email </mat-header-cell>
+          <mat-cell class="mobile-hidden-item" *matCellDef="let element"> {{element.email}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Group">
+          <mat-header-cell class="mobile-hidden-item" *matHeaderCellDef> Group </mat-header-cell>
+          <mat-cell class="mobile-hidden-item" *matCellDef="let element"> {{element.group}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Delete Participant">
+          <mat-header-cell *matHeaderCellDef [ngClass]="'customWidthClass'"> Delete Participant </mat-header-cell>
+          <mat-cell *matCellDef="let element" [ngClass]="'customWidthClass'"><a (click)="deletePerson(element.email)" mat-icon-button> <mat-icon class="tableicons">delete</mat-icon></a> </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+

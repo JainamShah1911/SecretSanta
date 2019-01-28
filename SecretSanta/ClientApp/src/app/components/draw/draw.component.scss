@@ -1,0 +1,56 @@
+/* Structure */
+.example-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  margin: 0px 20px 20px 20px;
+}
+
+.example-header {
+  min-height: 64px;
+  padding: 8px 24px 0;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 100%;
+}
+
+.customWidthClass {
+  flex: 0 0 100px;
+}
+
+.mat-card {
+  padding: 0px;
+}
+
+.mat-card img {
+  //width: calc(100%);
+}
+
+.mat-card-content {
+  padding: 24px;
+  font-size: 18px;
+}
+
+.login-card {
+  width: 100%;
+  margin: auto;
+}
+.buttontext {
+  font-size: 40px;
+  color: red;
+  font-weight: bolder;
+  /* padding: 29px; */
+  font-family: serif;
+}
+
+.revealbutton{
+  padding:20px;
+}

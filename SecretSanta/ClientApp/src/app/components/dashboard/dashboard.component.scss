@@ -1,0 +1,80 @@
+/*Nav Menu*/
+.rad-navigation {
+  //box-shadow: 0 0px 9px 4px rgba(0, 0, 0, 0.1), 0 -5px 2px 2px rgba(0, 0, 0, 0.1);
+  background: #b02a31;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+  padding-left: 13px;
+  padding-right: 13px;
+}
+
+.nav_logo {
+  width: 27px !important;
+  margin: 6px 6px;
+  float: left;
+}
+
+.mat-sidenav-container {
+  background-color: rgba(250, 250, 250, 0) !important;
+}
+
+.dash_content {
+  top: 52px;
+  /*height: calc(100% - 80px);
+  width: calc(100%);*/
+  min-height: calc(100vh - 52px);
+  background-image: url("../../../assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+@media screen and (max-width: 480px) {
+  .dash_content {
+    top: 104px;
+  }
+}
+
+.account_menu {
+  float: right;
+  margin-top: 5px;
+  color: white;
+}
+
+.account_menu img {
+  width: 35px !important;
+}
+
+.mat-menu-panel {
+  margin-top: 40px !important;
+}
+
+.sidenav-content {
+  display: flex;
+  height: calc(100% - 25px);
+  width: calc(100% - 2px);
+  margin-left: 1px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 414px) {
+  .sidenav-content {
+    height: calc(100% - 5px);
+    width: calc(100% - 6px);
+    margin-left: 1px;
+    margin-top: 0px;
+  }
+}
+
+.navbutton {
+  background: #b02a31;
+  font-weight: bold;
+  color: white;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 2px;
+  padding-left: 12px;
+  padding-right: 12px;
+}

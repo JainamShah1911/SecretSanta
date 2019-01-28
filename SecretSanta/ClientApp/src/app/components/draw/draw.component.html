@@ -1,0 +1,47 @@
+<div fxLayout="column" fxLayout.xs="column" style="padding:15px;">
+  <div  fxFlex="100" style="padding:15px" >
+      <button class="revealbutton" (click)="draw()" mat-raised-button><span class="buttontext">Reveal Secret Santa</span></button>
+  </div>
+  <div style="padding:15px" fxFlex="100">
+    <mat-table *ngIf="existdata" style="padding:15px" #table [dataSource]="dataSource">
+
+      <ng-container matColumnDef="Santa Name">
+        <mat-header-cell *matHeaderCellDef> Santa Name</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.santa.firstname}} {{element.santa.lastname}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Santa Email">
+        <mat-header-cell *matHeaderCellDef> Santa Email</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.santa.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Santa Group">
+        <mat-header-cell *matHeaderCellDef> Santa Group</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.santa.group}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Arrow">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let element"> <mat-icon color="primary">arrow_forward</mat-icon> </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Reciepent Name">
+        <mat-header-cell *matHeaderCellDef> Reciepent Name</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.giftRecipient.firstname}} {{element.giftRecipient.lastname}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Reciepent Email">
+        <mat-header-cell *matHeaderCellDef> Reciepent Email</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.giftRecipient.email}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="Reciepent Group">
+        <mat-header-cell *matHeaderCellDef> Reciepent Group</mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.giftRecipient.group}} </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    </div>
+  </div>

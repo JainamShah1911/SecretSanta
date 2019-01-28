@@ -1,0 +1,23 @@
+<nav class="rad-navigation">
+  <button [routerLink]="['home']" class="navbutton" mat-button>"SECRET SANTA"</button>
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <button class="navbutton" mat-button [routerLink]="['home']">Add Participats</button>
+  <button class="navbutton" mat-button [routerLink]="['draw']">Reveal Secret Santa</button>
+
+  <button mat-button [matMenuTriggerFor]="menu" class="account_menu">
+    Merry Christmas<mat-icon style="color:white">arrow_drop_down</mat-icon>
+  </button>
+
+
+  <mat-menu #menu="matMenu" class="account_menu_target">
+    <button mat-menu-item [routerLink]="['info']">
+      <mat-icon>info</mat-icon>
+      <span>Information</span>
+    </button>
+  </mat-menu>
+</nav>
+<mat-card class="dash_content">
+  <router-outlet></router-outlet>
+</mat-card>
