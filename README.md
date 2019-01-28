@@ -1,4 +1,4 @@
-# SecretSanta
+# Secret Santa
 
 A WebApp Used to Organize Secret Santa
 
